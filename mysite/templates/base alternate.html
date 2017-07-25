@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<header>
+<body>
+<div class="wrapper">
+    <div class="whiteTitleBar">
+        <span class="title">My Website</span>
+        <span class="navigation">
+            <a class="navigation" href="index.html"> Home</a>
+            <span class="navigationSpace"/>
+            <a class="navigation" href="ourwork.html"> What We Do</a>
+            <span class="navigationSpace"/>
+            <a class="navigation" href="about.html"> Who We Are</a>
+            <span class="navigationSpace"/>
+            <a class="navigation" href="donate.html"> Donate</a>
+        </span>
+    </div>
+
+    <div class="blackHorizontalLine"></div>
+    <div class="redYouAreHereBar">HOME</div>
+    <div class="blackHorizontalLine"></div>
+    <div class="home"></header>
+
+<body>
+    <h1>{% block title %}{% endblock %}</h1>
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+</html>

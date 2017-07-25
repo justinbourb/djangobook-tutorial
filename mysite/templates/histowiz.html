@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <title>HistoWiz: Automated Histology Outsourcing Services</title>
+        <!--
+        <link href="/app/static/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/app/static/css/hatebranding.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/png" href="/app/static/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/app/static/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/app/static/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/app/static/favicon-152x152.png" sizes="152x152">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="crossorigin="anonymous"></script>
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-32838659-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script src="https://cdn.optimizely.com/js/6509890146.js"></script>-->
+    </head>
+
+    <body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M6CTKH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6CTKH');</script>
+    <!-- End Google Tag Manager -->
+
+        <div class="container-fluid header-white-bg">
+            <div class="container container-menu nopadding">
+                <div class="header">
+
+                    <div class="logo">
+                        <a href="/"><img src="/app/static/images/hatebranding/logo/updated-logo-tr.png" /></a>
+                    </div>
+                    <div id="menu-icon"><a href="#" onclick="toggle_visibility();"><img src="/app/static/images/hatebranding/menu/menu-icon.png" /></a> </div>
+                    <div class="top-menu">
+
+                        <div id="foo">
+                            <ul>
+                                <li>
+                                <a href="/app/login?demo=1" >Demo</a>
+                                </li>
+
+                                <li>
+                                <a href="/how-it-works" >How It Works</a>
+                                </li>
+
+                                <li>
+                                <a href="/pricing" >Pricing</a>
+                                </li>
+
+                                <li>
+                                <a href="/services" >Services</a>
+                                </li>
+
+                                <!-- TODO: question about navbar layout -->
+                                <!--
+                                <li>
+                                TODO: Link to Shopify site?
+                                <a href="/">Slides Marketplace</a>
+                                </li>
+                                -->
+                                <li>
+                                <a href="/pathology-map" >PathologyMap�</a>
+                                </li>
+                                <li class="pink login">
+                                
+                                    <a href="/app/login" class="pink login-link">Log In</a>
+                                    <a href="/app/register" class="pink login-link">Sign Up</a>
+                                
+                                </li>
+                                <!--<li>
+                                <a href="/app/register" class="pink">Sign Up</a>
+                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function toggle_visibility() {
+                $('#foo').toggle();
+            }
+        </script>
+
+        <div class="empty-header"></div>
+
+        <div class="container-fluid top-image img-index white-bg-top">
+        </div>
+        
+
+
+<div id="fade" class="black_overlay" onclick="hideVideo()"></div>
+</div>
+
+<div id="embed-video" class="white-content">
+    <div class="histowiz-vid-wrap">
+		<iframe id="video" width="560" height="349" src="https://www.youtube.com/embed/VWx8WZFdayw?rel=0&enablejsapi=1" frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+</div>
+
+<div class="container-floating-play">
+	<a href="javascript:void(0)" onclick="playVideo()">
+		<img src="/app/static/images/hatebranding/icons/play.png" />
+  </a>
+</div>
+
+<script>
+	function playVideo() {
+		document.getElementById('embed-video').style.display='block';
+		document.getElementById('fade').style.display='block';
+
+		var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
+		//$("#video")[0].src += "&autoplay=1";
+		var func = 'playVideo';
+		iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+	}
+
+	function hideVideo() {
+		var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
+		var func = 'pauseVideo';
+		iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+
+		document.getElementById('embed-video').style.display='none';
+		document.getElementById('fade').style.display='none';
+		//$("#video")[0].src += "&autoplay=0";
+	}
+</script>
+
+<div class="container-floating center">
+  <h1 class="landing-header">Cut down the cutting time</h1>
+<div class="floating">
+    <h4 class="floating-header">
+        Send us tissue specimens to get your high quality digital slides in 3 days
+    </h4>
+    <a href="/app/register" class="red-button">Order Now!</a>
+</div>
+</div>
+
+<div class="container-fluid magenta">
+    <div class="container center">
+        <h2>Automated histology for biomedical researchers</h2>
+        
+        
+        
+        
+        <br />
+        <!--<a href="/app/register" id="white-button">Order Now!</a>-->
+    </div>
+</div>
+
+<div class="container top-bottom-padding">
+    <ul class="two-columns">
+        <li>
+            <div class="list-icon">
+                <img src="/app/static/images/hatebranding/icons/01.png">
+            </div>
+            <div class="list-text">
+                <h3>3 day turnaround</h3>
+                <p>
+                  Send us your wet tissue samples for processing, cutting,
+                  staining, scanning and access your whole-slide images
+                  online in 3 days guaranteed.
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="list-icon">
+                <img src="/app/static/images/hatebranding/icons/02.png">
+            </div>
+            <div class="list-text">
+                <h3>Results in the Cloud</h3>
+                <p>Your results are stored safely in the cloud.
+                   Don�t ever worry about losing precious data again.
+                   Easily accessible anytime, anywhere for as long as needed.
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="list-icon">
+                <img src="/app/static/images/hatebranding/icons/03.png">
+            </div>
+            <div class="list-text">
+                <h3>Device Independent</h3>
+                <p>Access your digital slides from any internet-connected
+                   computer or mobile device, without the need to download any software,
+                   plugins or gigabyte sized files.
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="list-icon">
+                <img src="/app/static/images/hatebranding/icons/04.png">
+            </div>
+            <div class="list-text">
+                <h3>Image Analysis</h3>
+                <p>Whether it�s our world-renowned pathologists or industry
+                   leading automated image analysis software, we can help
+                   quantify and analyze your results to expedite your research.
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="list-icon">
+                <img src="/app/static/images/hatebranding/icons/05.png">
+            </div>
+            <div class="list-text">
+                <h3>Competitive Pricing</h3>
+                <p>Thanks to our process innovation and machine learning
+                   technology, we can deliver better results, faster
+                   and more economic than other CROs.
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="list-icon">
+                <img src="/app/static/images/hatebranding/icons/09.png">
+            </div>
+            <div class="list-text">
+                <h3 class="product">PathologyMap�</h3>
+                <p> Access the world�s largest online whole-slide image database
+                    to view, share, tag, search, compare and analyze histology
+                    data at your fingertips.
+                </p>
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+
+<div class="container-fluid">
+    <div class="container center">
+        <div class="one-fourth">
+            <a href="/about">
+              <img src="/app/static/images/hatebranding/index-actions/accelerate.jpg" width="100%"/>
+            </a>
+            <p>
+                We are the fastest histology service company building an intelligent tissue platform.
+                
+            </p>
+            <div>
+              <a href="/about"
+                 class="red-button">The HistoWiz advantage</a>
+            </div>
+        </div>
+
+        <div class="one-fourth">
+            <img src="/app/static/images/hatebranding/index-actions/free-trial.jpg" width="100%" />
+            <p>Take advantage of the HistoWiz free trial offer on your first set
+               of samples.
+            </p>
+            <div><a href="/app/register" class="red-button">Free Trial</a></div>
+        </div>
+
+        <div class="one-fourth">
+            <img src="/app/static/images/hatebranding/index-actions/amazon.png" width="100%" />
+            <p>Refer a colleague and when they place an order you'll get a $50 Amazon gift card.</p>
+            <div><a href="/referral" class="red-button">Referral Program</a></div>
+        </div>
+
+        <div class="one-fourth">
+            <img src="/app/static/images/hatebranding/index-actions/president-dinner.png" width="100%" />
+            <p>Once a month our customers are invited to dinner with our CEO 
+               to give feedback.
+            </p>
+            <div>
+              <a href="https://www.eventbrite.com/e/histowiz-monthly-dinner-with-customers-tickets-32340126188" class="red-button">
+                Dinner at HistoWiz
+              </a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="container center">
+    <br />
+    <h4 class="client-link">We are proud that our services are trusted by hundreds of<br />
+      <a href="/clients">forward-thinking
+          academic institutes and pharmas</a>
+        around the world, including:
+    </h4>
+</div>
+
+<div class="container-fluid white-bg">
+    <a class="client-logos-linkthru" href="/clients">
+      <div class="client-logos client-logos-more">
+        <img class="all-logos" src="/app/static/images/hatebranding/clients-colour/logos-all.png"
+             alt="Howard Hughes Medical Clinic, Memorial Sloan-Kettering Cancer Center, Dana-Farber Cancer Institute,
+                  Weill Cornell Medical College, Columbia University, Novo Nordisk, Regeneron, NIH,
+                  Harvard Medical School, The Jackson Laboratory,
+                  The Rockefeller University, Stanford Medicine, Cancer Research UK" />
+
+        <img class="logos-1" src="/app/static/images/hatebranding/clients-colour/logos-1.png"
+             alt="Howard Hughes Medical Clinic, Memorial Sloan-Kettering Cancer Center, Dana-Farber Cancer Institute,
+                  Weill Cornell Medical College, Columbia University, Novo Nordisk, Regeneron, NIH,
+                  Harvard Medical School, The Jackson Laboratory,
+                  The Rockefeller University, Stanford Medicine, Cancer Research UK" />
+        <img class="logos-2" src="/app/static/images/hatebranding/clients-colour/logos-2.png"
+             alt="Howard Hughes Medical Clinic, Memorial Sloan-Kettering Cancer Center, Dana-Farber Cancer Institute,
+                  Weill Cornell Medical College, Columbia University, Novo Nordisk, Regeneron, NIH,
+                  Harvard Medical School, The Jackson Laboratory,
+                  The Rockefeller University, Stanford Medicine, Cancer Research UK" />
+      <!--<img src="/app/static/images/hatebranding/clients-colour/hhmi-logo.png" alt="Rigel" />
+      <img src="/app/static/images/hatebranding/clients-colour/mskcc-logo.png" alt="Rockland Antibodies & Assays" />
+      <img src="/app/static/images/hatebranding/clients-colour/dana-farber-logo.png" alt="Rockland Antibodies & Assays" />
+      <img src="/app/static/images/hatebranding/clients-colour/wcmc-emblem-logo.png" alt="Novus Biologicals" />
+      <img src="/app/static/images/hatebranding/clients-colour/columbia-crown-logo.png" alt="Novus Biologicals" />
+      <img src="/app/static/images/hatebranding/clients-colour/novo-nordisk-logo.png" alt="Novo Nordisk" />
+      <img src="/app/static/images/hatebranding/clients-colour/regeneron-logo.png" alt="H3 Biomedicine" />
+      <img src="/app/static/images/hatebranding/clients-colour/NIH-logo.png" alt="University of Arizona" />
+      <img src="/app/static/images/hatebranding/clients-colour/harvard-logo.png" alt="University of Copenhagen" />
+      <img src="/app/static/images/hatebranding/clients-colour/jackson-laboratory-logo.png" alt="Visikol" />
+      <img src="/app/static/images/hatebranding/clients-colour/rocku-logo.png" alt="Nilogen Oncosystems" />
+      <img src="/app/static/images/hatebranding/clients-colour/stanford-logo.png" alt="Perlara" />
+      <img src="/app/static/images/hatebranding/clients-colour/cancer-research-logo.png" alt="Perlara" />-->
+      </div>
+    </a>
+    <a href="/clients" class="client-logos-see-all">
+      See all
+    </a>
+</div>
+
+
+<footer>
+    <div class="container-fluid min-height">
+        <div class="container">
+            <div class="bottom-menu-left">
+                <ul>
+					<li>
+						<a href="/about">About</a>
+					</li>
+                    <li>
+                    <a href="/team">Team</a>
+                    </li>
+                    <li>
+                    <a href="/clients">Clients</a>
+                    </li>
+					<li>
+						<a href="/app/register">Free Trial</a>
+					</li>
+					<li>
+						<a href="/faq">FAQ</a>
+					</li>
+					<li>
+						<a href="/referral">Referral Program</a>
+					</li>
+					<li>
+						<a href="https://www.eventbrite.com/e/histowiz-monthly-dinner-with-customers-tickets-32340126188">Dinner at HistoWiz</a>
+					</li>
+					<li>
+						<a href="/terms">Terms</a>
+					</li>
+					<li>
+						<a href="/contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+            <div class="social">
+                <ul>
+                    <li>
+                    <a href="https://twitter.com/histowiz"><img src="/app/static/images/hatebranding/social/twitter.png"></a>
+                    </li>
+                    <li>
+                    <a href="https://www.linkedin.com/company/histowiz"><img src="/app/static/images/hatebranding/social/linkedin.png"></a>
+                    </li>
+                    <li>
+                    <a href="https://www.facebook.com/histowiz/"><img src="/app/static/images/hatebranding/social/facebook.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="copyright">
+                HistoWiz Inc., Advanced Biotechnology Park, 760 Parkside Avenue, Brooklyn, NY 11226
+                � +1 (347) 221-1020 <a href="mailto:info@histowiz.com">info@histowiz.com</a><br />
+                � 2017 HistoWiz, Inc. All rights reserved.
+            </div>
+            <div class="logo-bottom"><a href="/"><img src="/app/static/images/hatebranding/logo/histowiz-logo-white.png" /></a></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

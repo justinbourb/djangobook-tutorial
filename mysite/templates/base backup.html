@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<header>
+<a href="http://127.0.0.1:8000">Go to Homepage</a>
+    <a href="http://127.0.0.1:8000/hello">Try /hello</a>
+    <a href="http://127.0.0.1:8000/time">Try /time</a>
+    <a href="http://127.0.0.1:8000/time/plus/1">Try /time/plus/##</a>
+    <a href="http://127.0.0.1:8000/histowiz">Try /histowiz</a>
+</header>
+
+<body>
+    <h1>{% block title %}{% endblock %}</h1>
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+</html>
