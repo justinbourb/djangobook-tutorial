@@ -13,10 +13,11 @@
 
 
 </header>
-
+{% block title %}{% endblock %}
 <body>
-    <h1>{% block title %}{% endblock %}</h1>
-    {% block content %}{% endblock %}
+  <body style="background-color:LightSteelBlue  ;">
+    {% block content %}
+    {% endblock %}
 
     {% block footer %}
     <hr>

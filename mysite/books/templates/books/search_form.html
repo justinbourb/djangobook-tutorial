@@ -1,6 +1,10 @@
 {% extends "base.html" %}
+{% block title %}
+<head>
+  <title>Search Books | My site</title>
+</head>
+{% endblock %}
 
-<html>
 
 {% block content %}
 <h1>
@@ -10,7 +14,7 @@ Search Books
 <body>
 	{% if errors %}
 	<ul>
-		
+
 		{% for error in errors %}
 		<li><p style="color: red;">{{ error }}</li></p>
 		{% endfor %}
@@ -21,5 +25,5 @@ Search Books
 	<input type="submit" value="Search">
 	</form>
 </body>
-</html>
+
 {% endblock %}

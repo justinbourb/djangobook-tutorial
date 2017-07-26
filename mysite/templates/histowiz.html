@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block title %}
 ﻿<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,8 +26,10 @@
         </script>
         <script src="https://cdn.optimizely.com/js/6509890146.js"></script>-->
     </head>
-
+{% endblock %}
+{% block content %}
     <body>
+
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M6CTKH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -75,10 +79,10 @@
                                 <a href="/pathology-map" >PathologyMap�</a>
                                 </li>
                                 <li class="pink login">
-                                
+
                                     <a href="/app/login" class="pink login-link">Log In</a>
                                     <a href="/app/register" class="pink login-link">Sign Up</a>
-                                
+
                                 </li>
                                 <!--<li>
                                 <a href="/app/register" class="pink">Sign Up</a>
@@ -100,7 +104,7 @@
 
         <div class="container-fluid top-image img-index white-bg-top">
         </div>
-        
+
 
 
 <div id="fade" class="black_overlay" onclick="hideVideo()"></div>
@@ -154,10 +158,10 @@
 <div class="container-fluid magenta">
     <div class="container center">
         <h2>Automated histology for biomedical researchers</h2>
-        
-        
-        
-        
+
+
+
+
         <br />
         <!--<a href="/app/register" id="white-button">Order Now!</a>-->
     </div>
@@ -255,7 +259,7 @@
             </a>
             <p>
                 We are the fastest histology service company building an intelligent tissue platform.
-                
+
             </p>
             <div>
               <a href="/about"
@@ -279,7 +283,7 @@
 
         <div class="one-fourth">
             <img src="/app/static/images/hatebranding/index-actions/president-dinner.png" width="100%" />
-            <p>Once a month our customers are invited to dinner with our CEO 
+            <p>Once a month our customers are invited to dinner with our CEO
                to give feedback.
             </p>
             <div>
@@ -404,3 +408,4 @@
 </footer>
 </body>
 </html>
+{% endblock %}
