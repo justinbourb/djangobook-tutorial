@@ -1,7 +1,20 @@
 {% extends "base.html" %}
+
+{% block title %}
+<title>The Blog</title>
+{% endblock %}
+
 {% block content %}
-<html>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</html>
+
+<body>
+  <div>
+    {% for post in posts %}
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>published: {{ post.published_date }}</p>
+      <p>{{ post.text|linebreaksbr }}</p>
+      <hr>
+    {% endfor %}
+  </div>
+</body>
+
 {% endblock %}
