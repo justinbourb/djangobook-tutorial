@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^display_meta/$', display_meta),
     url(r'^contact/$', contact),
     url(r'^', include('books.urls')),
+    url(r'^', include('blog.urls')),
+    
 ]
